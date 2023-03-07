@@ -41,6 +41,7 @@ ALTRIMENTI no
 
 let numberContainerEl = document.getElementById("rundom-numbers-container");
 
+let inputContainerEl = document.getElementById("input-container");
 let number1El = document.getElementById("number1");
 let number2El = document.getElementById("number2");
 let number3El = document.getElementById("number3");
@@ -48,10 +49,16 @@ let number4El = document.getElementById("number4");
 let number5El = document.getElementById("number5");
 
 let checkButtonEl = document.getElementById("check-button");
+let textEl = document.getElementById("text");
 let resultEl = document.getElementById("result");
 
 let randomNumberList = [];
 let correctUserNumberList = [];
+
+// variabile rappresentante i secondi rimanenti nel countdown
+let secondsLeft = 10;
+// memorizzo la timing function in una variabile per poterla manipolare
+let countdown = setInterval(count, 1000);
 
 
 // Genero 5 numeri casuali, li metto in un array
@@ -60,8 +67,30 @@ while (randomNumberList.length < 5) {
   const newRandomNumber = randomNumberBetween (1, 100);
   randomNumberList.push(newRandomNumber);
 }
-// Li stampo in pagina
-numberContainerEl.innerText = randomNumberList;
+
+
+// dichiaro la funzione da chiamare dentro la timing function
+function count() {
+    
+  numberContainerEl.innerText = randomNumberList;
+  console.log(secondsLeft);
+
+  // controllo se il conto alla rovescia è arrivato a 0
+  if(secondsLeft <= 0) {
+    
+    // stampo in pagina
+    numberContainerEl.innerText = ""; 
+    inputContainerEl.style.display = "flex";
+    textEl.style.display = "block";
+    checkButtonEl.style.display = "flex";
+
+    // rimuovo la timing function 
+    clearInterval(countdown);
+  }
+
+  // altrimenti diminuisco il timer
+  secondsLeft--;
+}
 
 checkButtonEl.addEventListener('click', function() {
 

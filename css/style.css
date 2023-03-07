@@ -13,7 +13,7 @@
 
 #input-container {
   padding-top: 2em;
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 1em;
 }
@@ -24,12 +24,25 @@
 }
 
 #text {
+  display: none;
   text-align: center;
   padding-top: 1em;
+  font-size: 1.5em;
 }
 
 #result {
   text-align: center;
   padding-top: 1em;
   font-size: 2em;
+}
+
+#check-button {
+  display: none;
+  margin: 0 auto;
+  padding: 1em 2em;
+  background-color: rgb(28, 28, 179);
+  color:  white;
+  font-size: 0.8em;
+  border: transparent;
+  border-radius: 10px;
 }
