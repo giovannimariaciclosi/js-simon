@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#rundom-numbers-container{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2em;
+  font-size: 2em;
+}
+
+#input-container {
+  padding-top: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+#button-container {
+  text-align: center;
+  padding-top: 1em;
+}

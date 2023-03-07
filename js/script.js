@@ -12,10 +12,102 @@ Consigli del giorno:
 
 
 PSEUDOCODICE:
-- Generare 5 numeri casuali
-- Farli scomparire dopo 10 secondi
+- Genero 5 numeri casuali, li metto in un array e li stampo in pagina
+- Li faccio scomparire dopo 10 secondi ???
+- Tramite 5 campi di input faccio inserire 5 numeri all'utente
+- SE il valore del primo campo di input è presente nell'array di numeri casuali
+  °Lo inserisco in un nuovo array di numeri corretti
+ALTRIMENTI  no
+- SE il valore del secondo campo di input è presente nell'array di numeri casuali
+  °Lo inserisco in un nuovo array
+ALTRIMENTI no
+- SE il valore del terzo campo di input è presente nell'array di numeri casuali
+  °Lo inserisco in un nuovo array
+ALTRIMENTI no
+- SE il valore del quarto campo di input è presente nell'array di numeri casuali
+  °Lo inserisco in un nuovo array
+ALTRIMENTI no
+- SE il valore del quinto campo di input è presente nell'array di numeri casuali
+  °Lo inserisco in un nuovo array
+ALTRIMENTI no
+
+- SE il nuovo array ha lunghezza 0
+  ° scrivo che l'utente non ha preso neanche un numero
+- ALTRIMENTI
+  ° scrivo che l'utente ha preso array.lenght numeri, che corrispondono a: array
+
+
 */
 
+let numberContainerEl = document.getElementById("rundom-numbers-container");
+
+let number1El = document.getElementById("number1");
+let number2El = document.getElementById("number2");
+let number3El = document.getElementById("number3");
+let number4El = document.getElementById("number4");
+let number5El = document.getElementById("number5");
+
+let checkButtonEl = document.getElementById("check-button");
+
+let randomNumberList = [];
+let correctUserNumberList = [];
+
+
+// Genero 5 numeri casuali, li metto in un array
+while (randomNumberList.length < 5) {
+
+  const newRandomNumber = randomNumberBetween (1, 100);
+  randomNumberList.push(newRandomNumber);
+}
+// Li stampo in pagina
+numberContainerEl.innerText = randomNumberList;
+
+checkButtonEl.addEventListener('click', function() {
+
+  if (randomNumberList.includes(parseInt(number1El.value))) {
+    correctUserNumberList.push(number1El.value);66
+  } else {
+    console.log("odio tutto")
+  }
+  
+  if (randomNumberList.includes(number2El.value)) {
+    correctUserNumberList.push(number2El.value);
+  }
+
+  // userNumberList.push(number2El.value);
+  // userNumberList.push(number3El.value);
+  // userNumberList.push(number4El.value);
+  // userNumberList.push(number5El.value);
+
+  console.log(correctUserNumberList)
+
+});
+console.log(randomNumberList)
+
+// let numeroPrompt = prompt("inserisci numero");
+// if (randomNumberList.includes(parseInt(numeroPrompt))) {
+//   correctUserNumberList.push(numeroPrompt);
+
+// }
+console.log(correctUserNumberList);
+
+
+
+
+
+
+
+let seconds = 10;
+
+
+function countdown() {
+  seconds--;
+  console.log(seconds);
+
+  if (seconds = 0) {
+    clearInterval(seconds);
+  }
+}
 
 
 
