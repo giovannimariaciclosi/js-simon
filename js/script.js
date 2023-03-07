@@ -48,6 +48,7 @@ let number4El = document.getElementById("number4");
 let number5El = document.getElementById("number5");
 
 let checkButtonEl = document.getElementById("check-button");
+let resultEl = document.getElementById("result");
 
 let randomNumberList = [];
 let correctUserNumberList = [];
@@ -65,49 +66,32 @@ numberContainerEl.innerText = randomNumberList;
 checkButtonEl.addEventListener('click', function() {
 
   if (randomNumberList.includes(parseInt(number1El.value))) {
-    correctUserNumberList.push(number1El.value);66
-  } else {
-    console.log("odio tutto")
-  }
-  
-  if (randomNumberList.includes(number2El.value)) {
+    correctUserNumberList.push(number1El.value);
+  } 
+
+  if (randomNumberList.includes(parseInt(number2El.value))) {
     correctUserNumberList.push(number2El.value);
   }
 
-  // userNumberList.push(number2El.value);
-  // userNumberList.push(number3El.value);
-  // userNumberList.push(number4El.value);
-  // userNumberList.push(number5El.value);
+  if (randomNumberList.includes(parseInt(number3El.value))) {
+    correctUserNumberList.push(number3El.value);
+  }
 
-  console.log(correctUserNumberList)
+  if (randomNumberList.includes(parseInt(number4El.value))) {
+    correctUserNumberList.push(number4El.value);
+  }
+
+  if (randomNumberList.includes(parseInt(number5El.value))) {
+    correctUserNumberList.push(number5El.value);
+  }
+
+  if (correctUserNumberList.length == 0) {
+    resultEl.innerText = "Non hai azzeccato neanche un numero, fai schifo."
+  } else {
+    resultEl.innerText = `Hai preso ${correctUserNumberList.length} numeri: ${correctUserNumberList}`;
+  }
 
 });
-console.log(randomNumberList)
-
-// let numeroPrompt = prompt("inserisci numero");
-// if (randomNumberList.includes(parseInt(numeroPrompt))) {
-//   correctUserNumberList.push(numeroPrompt);
-
-// }
-console.log(correctUserNumberList);
-
-
-
-
-
-
-
-let seconds = 10;
-
-
-function countdown() {
-  seconds--;
-  console.log(seconds);
-
-  if (seconds = 0) {
-    clearInterval(seconds);
-  }
-}
 
 
 
